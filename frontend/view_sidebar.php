@@ -30,6 +30,13 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
+      <a class="nav-link link-page" name="pegawai" href="#" aria-expanded="true">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Pegawai</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" href="#" aria-expanded="true">
         <i class="fas fa-fw fa-file-signature"></i>
         <span>Entry SPPD</span>
