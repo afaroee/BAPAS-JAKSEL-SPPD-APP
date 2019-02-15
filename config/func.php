@@ -1,13 +1,18 @@
 <?php
-include("dbcon.php");
+//include("dbcon.php");
 include("conf.inc.php");
+include("data.inc.php");
 
-spl_autoload_register(function ($class) {
-    include '/'.$class.'.php';
-});
+EzConnect();
 
-function alert_login_failed() {
-    echo "<h3>Maaf anda salah memasukan data, silahkan coba kembali</h3>";
+function EzConnect(){
+	global $bapasDB;
+
+	$server = "localhost";
+	$username = "root";
+	$password = "";
+	$db_name = "bapasjaksel_sppd";
+	$bapasDB->ConnectDB($server, $username, $password, $db_name);
 }
 
 function faroeeCrypt($str) {

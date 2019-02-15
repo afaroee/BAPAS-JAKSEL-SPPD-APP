@@ -1,6 +1,4 @@
 <?php
-include("dbcon.php");
-include("func.php");
 
 class userData {
    protected $USERNAME = "";
