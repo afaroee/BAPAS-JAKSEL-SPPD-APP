@@ -1,4 +1,5 @@
 <?php
+include "../config/func.php";
 include "../config/userData.php";
 
 session_start();
@@ -11,7 +12,7 @@ $lastLogin = "";
 
 $q = "SELECT * FROM tb_user WHERE username = '$username'";
 
-$res = $conn->prepare($q);
+$res = $bapasDB->prepare($q);
     $res->execute();
     if (($res->rowCount())==1) {
         
@@ -31,7 +32,7 @@ $res = $conn->prepare($q);
             $lastLogin = date("Y/m/d h:i:sa");
             $lastLogin = str_replace($lastLogin, "/", "-");
             $q_LastLogin = "UPDATE tb_user SET last_login = '".$lastLogin."' WHERE username = '".$username."'";
-            $sql_update = $conn->prepare($q_LastLogin);
+            $sql_update = $bapasDB->prepare($q_LastLogin);
             $sql_update->execute();
 
             // store user login into session
